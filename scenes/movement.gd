@@ -1,13 +1,29 @@
 extends CharacterBody2D
 
-@export var speed: int = 70
+@export var speed: int = 100
+var current_dir = "none"
 
 var currentHealth: int = 3
 
-func handleInput():
-	var moveDirection = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = moveDirection*speed
-
 func _physics_process(delta):
-	handleInput()
+	player_movement(delta)
+
+func player_movement(delta):
+	
+	if Input.is_action_pressed("move_right"):
+		velocity.x = speed
+		velocity.y = 0
+	elif Input.is_action_pressed("move_left"):
+		velocity.x = -speed
+		velocity.y = 0
+	elif Input.is_action_pressed("move_up"):
+		velocity.x = 0
+		velocity.y = -speed
+	elif Input.is_action_pressed("move_down"):
+		velocity.x = 0
+		velocity.y = speed
+	else:
+		velocity.x = 0
+		velocity.y = 0
+
 	move_and_slide()
