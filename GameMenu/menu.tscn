@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpkwf2ju227wr"]
+[gd_scene load_steps=3 format=3 uid="uid://dpkwf2ju227wr"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_gk0cb"]
+[ext_resource type="FontFile" uid="uid://di7g3lbon2hqf" path="res://GameMenu/joystix monospace.otf" id="2_bh4b7"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,26 +12,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gk0cb")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Rules" type="Button" parent="."]
 layout_mode = 2
-
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play"
-
-[node name="Rules" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 384.0
+theme_override_fonts/font = ExtResource("2_bh4b7")
+theme_override_font_sizes/font_size = 36
 text = "Rules"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 2
+offset_left = 448.0
+offset_top = 448.0
+offset_right = 704.0
+offset_bottom = 576.0
+theme_override_fonts/font = ExtResource("2_bh4b7")
+theme_override_font_sizes/font_size = 36
 text = "Exit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Rules" to="." method="_on_rules_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Play" type="Button" parent="."]
+layout_mode = 2
+offset_left = 456.0
+offset_top = 64.0
+offset_right = 704.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("2_bh4b7")
+theme_override_font_sizes/font_size = 36
+text = "Play"
+
+[connection signal="pressed" from="Rules" to="." method="_on_rules_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
