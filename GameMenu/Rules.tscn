@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpqrr3uhuewwm"]
+[gd_scene load_steps=3 format=3 uid="uid://cpqrr3uhuewwm"]
 
 [ext_resource type="Script" path="res://GameMenu/BackButton.gd" id="1_q1ykl"]
+[ext_resource type="FontFile" uid="uid://di7g3lbon2hqf" path="res://GameMenu/joystix monospace.otf" id="2_namlp"]
 
-[node name="Control" type="Control"]
+[node name="Rules" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,30 +14,35 @@ grow_vertical = 2
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 13.0
-offset_top = 606.0
-offset_right = 63.0
+offset_top = 568.0
+offset_right = 168.0
 offset_bottom = 637.0
+theme_override_fonts/font = ExtResource("2_namlp")
 text = "Back "
 script = ExtResource("1_q1ykl")
 
-[node name="Label" type="Label" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 424.0
-offset_top = 64.0
-offset_right = 734.0
-offset_bottom = 256.0
+offset_left = 272.0
+offset_top = 128.0
+offset_right = 992.0
+offset_bottom = 312.0
+theme_override_fonts/normal_font = ExtResource("2_namlp")
+theme_override_font_sizes/normal_font_size = 22
 text = "1. Shoot the angry Geese
-2. Do not get pecked by the angry Geese
-3. Play until you die  "
-vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+2. Survive the wave of angry geese
+
+3. Play until you die  "
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 310.0
-offset_top = 395.0
-offset_right = 983.0
-offset_bottom = 578.0
-text = "Commands: (insert image that they f)"
-vertical_alignment = 1
+offset_left = 312.0
+offset_top = 448.0
+offset_right = 880.0
+offset_bottom = 632.0
+theme_override_fonts/normal_font = ExtResource("2_namlp")
+theme_override_font_sizes/normal_font_size = 22
+text = "Commands: "
 
 [connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]
