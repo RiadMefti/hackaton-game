@@ -109,3 +109,7 @@ shape = SubResource("RectangleShape2D_832ag")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_eplmu")
 frame_progress = 0.27511
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
