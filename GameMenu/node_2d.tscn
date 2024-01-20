@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bem68cgmg5a3p"]
 
 [ext_resource type="Texture2D" uid="uid://d1p2yyr4o0r1s" path="res://icon.svg" id="1_7o6m4"]
-[ext_resource type="Script" path="res://GameMenu/movement.gd" id="1_elgy2"]
+[ext_resource type="Script" path="res://scenes/movement.gd" id="1_elgy2"]
 
 [node name="Game" type="Node2D"]
 
