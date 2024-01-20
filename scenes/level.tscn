@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://0i73fqvqtfb5"]
+[gd_scene load_steps=18 format=3 uid="uid://0i73fqvqtfb5"]
 
 [ext_resource type="Script" path="res://scenes/movement.gd" id="1_2b6j7"]
+[ext_resource type="Texture2D" uid="uid://1cp5nv0usgi5" path="res://assets/background.png" id="1_vmmdg"]
 [ext_resource type="Texture2D" uid="uid://d1p2yyr4o0r1s" path="res://icon.svg" id="2_q2x37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_832ag"]
@@ -98,6 +99,9 @@ animations = [{
 }]
 
 [node name="Game" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vmmdg")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_2b6j7")
