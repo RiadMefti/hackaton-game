@@ -1,7 +1,7 @@
 extends Control 
 #Play button
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://GameMenu/node_2d.tscn")
+	get_tree().change_scene_to_file("res://scenes/Level.tscn")
 	
 
 
