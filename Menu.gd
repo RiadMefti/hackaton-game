@@ -7,10 +7,9 @@ func _on_play_pressed():
 
 #Rules button
 func _on_rules_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://GameMenu/Rules.tscn")
 
 
 #Exit button 
 func _on_quit_pressed():
-
-	get_tree().quit
+	get_tree().quit()
