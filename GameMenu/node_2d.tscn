@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4dd2bgopxk31"]
+[gd_scene load_steps=3 format=3 uid="uid://b4dd2bgopxk31"]
 
 [ext_resource type="Texture2D" uid="uid://d1p2yyr4o0r1s" path="res://icon.svg" id="1_7o6m4"]
+[ext_resource type="Script" path="res://GameMenu/movement.gd" id="1_elgy2"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_elgy2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(595, 304)
 texture = ExtResource("1_7o6m4")
