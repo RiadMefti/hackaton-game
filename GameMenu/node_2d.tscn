@@ -9,5 +9,8 @@
 script = ExtResource("1_elgy2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(595, 304)
+position = Vector2(512.25, 193.688)
+scale = Vector2(0.277344, 0.284192)
 texture = ExtResource("1_7o6m4")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
