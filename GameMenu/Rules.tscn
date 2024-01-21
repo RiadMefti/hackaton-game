@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpqrr3uhuewwm"]
+[gd_scene load_steps=6 format=3 uid="uid://cpqrr3uhuewwm"]
 
 [ext_resource type="Script" path="res://GameMenu/BackButton.gd" id="1_q1ykl"]
 [ext_resource type="FontFile" uid="uid://di7g3lbon2hqf" path="res://GameMenu/joystix monospace.otf" id="2_namlp"]
 [ext_resource type="Texture2D" uid="uid://c10p67x77wvem" path="res://assets/Assets.jpeg" id="3_v3v2b"]
 [ext_resource type="AudioStream" uid="uid://cokdlj5t5jlm2" path="res://assets/Y2meta.app - Run As Fast As You Can (128 kbps).mp3" id="4_3p77d"]
+[ext_resource type="Texture2D" uid="uid://o8g42qbu6x6l" path="res://assets/running geese.png" id="5_2p80a"]
 
 [node name="Rules" type="Control"]
 layout_mode = 3
@@ -56,5 +57,11 @@ texture = ExtResource("3_v3v2b")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_3p77d")
 autoplay = true
+
+[node name="RunningGeese" type="Sprite2D" parent="."]
+position = Vector2(167, 297)
+rotation = 0.380482
+scale = Vector2(0.48, 0.48)
+texture = ExtResource("5_2p80a")
 
 [connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]
