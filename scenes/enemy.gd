@@ -3,38 +3,32 @@ extends CharacterBody2D
 var speed = 100
 var player = null
 var player_chase = false
+var hit = false
 
 func _physics_process(delta):
 	if player_chase:
 		var direction = "side"
 		position += (player.position - position) / speed
+		if hit:
+			print("hit")
+			self.queue_free()
 		#update direction
 		if position.x < player.position.x and position.y < player.position.y + 75 and position.y > player.position.y - 75:
 			direction = "left"
-			print(direction)
 		elif position.x > player.position.x and position.y < player.position.y + 75 and position.y > player.position.y - 75:
 			direction = "right"
-			print(direction)
 		elif position.y > player.position.y and position.x < player.position.x + 50 and position.x > player.position.x - 50:
 			direction = "up"
-			print(direction)
 		elif position.y < player.position.y and position.x < player.position.x + 50 and position.x > player.position.x - 50:
 			direction = "down"
-			print(direction)
 		elif position.y > player.position.y + 75 and position.x < player.position.x - 50:
 			direction = "verR"
-			print(direction)
 		elif position.y > player.position.y + 75 and position.x > player.position.x + 50:
 			direction = "verL"
-			print(direction)
 		elif position.y < player.position.y - 75 and position.x < player.position.x - 50:
 			direction = "diaR"
-			print(direction)
 		elif position.y < player.position.y - 75 and position.x > player.position.x + 50:
 			direction = "diaL"
-			print(direction)
-		#print(position)
-		#print(player.position)
 		playanim(direction)
 	
 
@@ -75,3 +69,7 @@ func playanim(dir):
 		anim.flip_h = false
 		anim.play("verR_walk")
 	
+
+
+func _on_attack_area_area_entered(area):
+	hit = true
