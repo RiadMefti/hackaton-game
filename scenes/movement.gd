@@ -2,7 +2,25 @@ extends CharacterBody2D
 
 @export var speed = 400
 var LaserScene = preload("res://scenes/laser.tscn")
+var health= 3
 
+func receive_damage():
+	var canvasLayer = get_parent().get_node("CanvasLayer")
+	#var sprit1 = canvasLayer.get_node("health3")
+	#var sprit2 = canvasLayer.get_node("dead3")
+	#sprit1.visible = false
+	#sprit2.visible = true
+	
+	
+	var stringHealth = "health" + str(health)
+	var stringDead = "dead"+ str(health)
+	
+	var  healthIcon = canvasLayer.get_node(stringHealth)
+	var damage = canvasLayer.get_node(stringDead)
+	healthIcon.visible = false
+	damage.visible = true
+	health = health -1
+	
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
@@ -11,6 +29,7 @@ func updateAnim():
 	var direction = "up"
 	var movement = 0
 	if velocity.x < 0: 
+		
 		direction = "left"
 		movement = 1
 	elif velocity.x > 0: 
@@ -56,7 +75,7 @@ func play_anim(dir, movement):
 func shoot():
 
 	if Input.is_action_just_pressed("shoot"):
-		
+		receive_damage()
 		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		if input_direction != Vector2.ZERO:
 			var laser = LaserScene.instantiate()

@@ -1,14 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://0i73fqvqtfb5"]
+[gd_scene load_steps=25 format=3 uid="uid://0i73fqvqtfb5"]
 
 [ext_resource type="Script" path="res://scenes/movement.gd" id="1_2b6j7"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_adaa5"]
-[ext_resource type="Texture2D" uid="uid://1cp5nv0usgi5" path="res://assets/background.png" id="1_vmmdg"]
+[ext_resource type="Texture2D" uid="uid://lth4ncwiog1r" path="res://assets/background.png" id="1_vmmdg"]
 [ext_resource type="Texture2D" uid="uid://gekrnbop4u0f" path="res://assets/idle.png" id="3_3t8nf"]
 [ext_resource type="Texture2D" uid="uid://btnwn64eqqi7i" path="res://assets/front_walk.png" id="3_heesm"]
 [ext_resource type="Texture2D" uid="uid://cjppc6d4lbpm1" path="res://assets/back_walk.png" id="3_qunku"]
 [ext_resource type="Texture2D" uid="uid://b74a2hpgn0ubi" path="res://assets/side_walk.png" id="4_ry0qu"]
 [ext_resource type="Texture2D" uid="uid://bei5l5pk8wuli" path="res://assets/idle_side.png" id="5_a4w8s"]
 [ext_resource type="Texture2D" uid="uid://cb5vmjx8ut3ha" path="res://assets/idle_2.png" id="5_dwn2m"]
+[ext_resource type="Texture2D" uid="uid://coc7ldg2umgo7" path="res://assets/health.png" id="10_in1ch"]
+[ext_resource type="Texture2D" uid="uid://dssqe84acmg3j" path="res://assets/dead.png" id="11_fjdmu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2c2vx"]
 radius = 28.0
@@ -158,3 +160,38 @@ position = Vector2(-1, 776)
 rotation = 3.10712
 
 [node name="Marker2D" type="Marker2D" parent="Path2D/PathFollow2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="health1" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(36, 40)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_in1ch")
+
+[node name="health2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(97, 41)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_in1ch")
+
+[node name="health3" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(158, 41)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_in1ch")
+
+[node name="dead1" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(41, 33)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_fjdmu")
+
+[node name="dead2" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(102, 34)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_fjdmu")
+
+[node name="dead3" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(163, 33)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_fjdmu")
