@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpkwf2ju227wr"]
+[gd_scene load_steps=6 format=3 uid="uid://dpkwf2ju227wr"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_gk0cb"]
 [ext_resource type="FontFile" uid="uid://di7g3lbon2hqf" path="res://GameMenu/joystix monospace.otf" id="2_bh4b7"]
 [ext_resource type="AudioStream" uid="uid://dsu8knd0llfrk" path="res://assets/Y2meta.app - Pixel Tunes (Royalty Free Game Music Pack) (128 kbps).mp3" id="3_dhxuy"]
 [ext_resource type="Script" path="res://GameMenu/Audio.gd" id="4_egp8g"]
+[ext_resource type="Texture2D" uid="uid://5s5xegbf1tnv" path="res://assets/geese title.png" id="5_esvg8"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -16,30 +17,30 @@ script = ExtResource("1_gk0cb")
 
 [node name="Rules" type="Button" parent="."]
 layout_mode = 2
-offset_left = 448.0
-offset_top = 256.0
-offset_right = 704.0
-offset_bottom = 384.0
+offset_left = 120.0
+offset_top = 320.0
+offset_right = 376.0
+offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("2_bh4b7")
 theme_override_font_sizes/font_size = 36
 text = "Rules"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 2
-offset_left = 448.0
-offset_top = 448.0
-offset_right = 704.0
-offset_bottom = 576.0
+offset_left = 120.0
+offset_top = 512.0
+offset_right = 376.0
+offset_bottom = 640.0
 theme_override_fonts/font = ExtResource("2_bh4b7")
 theme_override_font_sizes/font_size = 36
 text = "Exit"
 
 [node name="Play" type="Button" parent="."]
 layout_mode = 2
-offset_left = 456.0
-offset_top = 64.0
-offset_right = 704.0
-offset_bottom = 200.0
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 368.0
+offset_bottom = 256.0
 theme_override_fonts/font = ExtResource("2_bh4b7")
 theme_override_font_sizes/font_size = 36
 text = "Play"
@@ -49,6 +50,21 @@ stream = ExtResource("3_dhxuy")
 volume_db = -14.857
 autoplay = true
 script = ExtResource("4_egp8g")
+
+[node name="GeeseTitle" type="Sprite2D" parent="."]
+position = Vector2(808, 464)
+scale = Vector2(0.93, 0.93)
+texture = ExtResource("5_esvg8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 88.0
+offset_right = 1152.0
+offset_bottom = 172.0
+theme_override_fonts/font = ExtResource("2_bh4b7")
+theme_override_font_sizes/font_size = 70
+text = "Quack Attack"
 
 [connection signal="pressed" from="Rules" to="." method="_on_rules_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
