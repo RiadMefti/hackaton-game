@@ -40,9 +40,11 @@ func receive_damage():
 	var stringDead = "dead"+ str(health)
 	var  healthIcon = canvasLayer.get_node(stringHealth)
 	var damage = canvasLayer.get_node(stringDead)
-	healthIcon.visibwlde = false
+	healthIcon.visible = false
 	damage.visible = true
 	health = health -1
+	if(health == 0):
+		get_tree().change_scene_to_file("res://scenes/Death.tscn")
 func get_random_position_on_perimeter():
 	var point = Vector2()
 	var side = randi() % 4  # Randomly select a side (0-3)
@@ -201,5 +203,9 @@ func _on_timer_2_timeout():
 
 
 func _on_detection_area_body_entered(body):
-	if(body.name == "enemy"):
-		print("ouch")
+	if body.is_in_group("enemies"):
+
+	
+		
+		receive_damage()
+		body.queue_free()

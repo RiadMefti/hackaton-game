@@ -10,7 +10,7 @@ func _physics_process(delta):
 		var direction = "side"
 		position += (player.position - position) / speed
 		if hit:
-			print("hit")
+			
 			player.killGoose()
 			self.queue_free()
 			
@@ -75,4 +75,5 @@ func playanim(dir):
 
 func _on_attack_area_area_entered(area):
 	if(area.name =="Area2D"):
+		area.get_parent().queue_free()
 		hit = true

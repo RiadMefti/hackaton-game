@@ -11,4 +11,7 @@ func _process(delta):
 
 
 func _on_area_2d_area_entered(area):
-	self.queue_free()
+
+	if area.get_parent().name != "Player":
+	
+		self.queue_free()
