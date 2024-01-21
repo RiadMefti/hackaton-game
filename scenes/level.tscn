@@ -1,7 +1,7 @@
-[gd_scene load_steps=52 format=3 uid="uid://0i73fqvqtfb5"]
+[gd_scene load_steps=53 format=3 uid="uid://0i73fqvqtfb5"]
 
 [ext_resource type="Script" path="res://scenes/movement.gd" id="1_2b6j7"]
-[ext_resource type="Texture2D" uid="uid://lth4ncwiog1r" path="res://assets/background.png" id="1_vmmdg"]
+[ext_resource type="Texture2D" uid="uid://1cp5nv0usgi5" path="res://assets/background.png" id="1_vmmdg"]
 [ext_resource type="PackedScene" uid="uid://bc62polg84ufx" path="res://scenes/enemy.tscn" id="2_lgdb4"]
 [ext_resource type="Texture2D" uid="uid://gekrnbop4u0f" path="res://assets/idle.png" id="3_3t8nf"]
 [ext_resource type="Texture2D" uid="uid://btnwn64eqqi7i" path="res://assets/front_walk.png" id="3_heesm"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ymjt5orgv45" path="res://canvas_layer.tscn" id="17_paiqr"]
 [ext_resource type="Texture2D" uid="uid://bcwsiqg4h0tr7" path="res://assets/Environment_6.png" id="17_vjc7p"]
 [ext_resource type="AudioStream" uid="uid://nqjhwiskbvfq" path="res://scenes/Y2meta.app - ♫ FULL ALBUM - 20XX _ ROYALTY FREE CHIPTUNE MUSIC (128 kbps).mp3" id="19_72qtx"]
+[ext_resource type="AudioStream" uid="uid://bupusp7dp0rko" path="res://scenes/Y2meta.app - Laser Shot Sound Effect (128 kbps).mp3" id="20_y350d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_832ag"]
 
@@ -3331,6 +3332,11 @@ wait_time = 2.0
 stream = ExtResource("19_72qtx")
 volume_db = -12.381
 autoplay = true
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_y350d")
+volume_db = -11.243
+pitch_scale = 1.41
 
 [connection signal="body_entered" from="Player/DetectionArea" to="Player" method="_on_detection_area_body_entered"]
 [connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]
