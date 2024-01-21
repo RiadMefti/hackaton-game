@@ -1,3 +1,7 @@
+Embark on an epic campus showdown as the fearless Evel from  UWaterloo faces her feathery foes! Armed with powerful lasers, she'll battle relentless geese in a perilous quest to reclaim the campus. Will you survive the honktastic onslaught ???
+
+![image](https://github.com/RiadMefti/hackaton-game/assets/90939473/93437104-8062-4208-aa43-4006907e7a3c)
+
 ## 💡Inspiration
 Our game, "Quack Attack," draws its inspiration from the simple, everyday reality of the University of Waterloo campus, which is notably populated with a large number of geese. These geese are infamous for their pervasive presence and the considerable amount of mess they create ( a lot of poop) . This unique aspect of campus life sparked the initial idea for our game.
 
