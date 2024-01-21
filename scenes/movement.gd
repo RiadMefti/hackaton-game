@@ -35,7 +35,7 @@ func receive_damage():
 	var stringDead = "dead"+ str(health)
 	var  healthIcon = canvasLayer.get_node(stringHealth)
 	var damage = canvasLayer.get_node(stringDead)
-	healthIcon.visibwle = false
+	healthIcon.visibwlde = false
 	damage.visible = true
 	health = health -1
 func get_random_position_on_perimeter():
@@ -111,7 +111,6 @@ func play_anim(dir, movement):
 func shoot():
 
 	if Input.is_action_just_pressed("shoot"):
-		receive_damage()
 		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		if input_direction != Vector2.ZERO:
 			var laser = LaserScene.instantiate()
