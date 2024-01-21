@@ -136,7 +136,6 @@ func shoot():
 				laser.rotation_degrees = -45
 			elif (input_direction.x * input_direction.y < 0):
 				laser.rotation_degrees = 45
-			print(input_direction)
 			laser.speed = 800 * input_direction  # Set the laser's speed to move left
 		else:
 			var laser  = LaserScene.instantiate()
