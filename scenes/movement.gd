@@ -16,7 +16,7 @@ func receive_damage():
 	var stringDead = "dead"+ str(health)
 	var  healthIcon = canvasLayer.get_node(stringHealth)
 	var damage = canvasLayer.get_node(stringDead)
-	healthIcon.visible = false
+	healthIcon.visibwle = false
 	damage.visible = true
 	health = health -1
 
