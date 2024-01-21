@@ -3294,6 +3294,7 @@ shape = SubResource("RectangleShape2D_35e57")
 
 [node name="enemy" parent="." instance=ExtResource("2_lgdb4")]
 position = Vector2(-1007, -655)
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
