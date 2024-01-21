@@ -46,6 +46,7 @@ text = "Play"
 
 [node name="MainMenu" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_dhxuy")
+volume_db = -14.857
 autoplay = true
 script = ExtResource("4_egp8g")
 
