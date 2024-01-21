@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 400
+var LaserScene = preload("res://scenes/laser.tscn")
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -52,8 +53,49 @@ func play_anim(dir, movement):
 	if dir == "up":
 		anim.flip_h = true
 		anim.play("back_walk")
+func shoot():
 
+	if Input.is_action_just_pressed("shoot"):
+		
+		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+		if input_direction != Vector2.ZERO:
+			var laser = LaserScene.instantiate()
+			laser.position = position  # Start the laser at the character's position
+			get_parent().add_child(laser)
+			
+			
+			
+			if(input_direction.x ==1):
+				laser.rotation_degrees = 90
+				
+			elif (input_direction.x == -1):
+				laser.rotation_degrees = -90
+			elif (input_direction.x * input_direction.y > 0):
+				laser.rotation_degrees = -45
+			elif (input_direction.x * input_direction.y < 0):
+				laser.rotation_degrees = 45
+			print(input_direction)
+			laser.speed = 800 * input_direction  # Set the laser's speed to move left
+		else:
+			var laser  = LaserScene.instantiate()
+			laser.position = position  # Start the laser at the character's position
+			get_parent().add_child(laser)
+			var shooting_vector = Vector2.ZERO 
+			shooting_vector.y = 800
+			laser.speed = shooting_vector
+	
 func _physics_process(delta):
 	get_input()
 	updateAnim()
 	move_and_slide()
+	
+	
+	
+	
+func _process(delta):
+	shoot()
+	#if Input.is_action_just_pressed("shoot"):
+		#print("shoot")  # Assuming 'ui_accept' is bound to the space bar
+		#var laser = LaserScene.instance()
+		#laser.position = self.position  # Start the laser at the character's position
+		#get_parent().add_child(laser)  # Add the laser to the game world

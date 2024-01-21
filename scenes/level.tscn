@@ -156,3 +156,4 @@ position = Vector2(-1, 776)
 rotation = 3.10712
 
 [node name="Marker2D" type="Marker2D" parent="Path2D/PathFollow2D"]
+[node name="Marker2D" type="Marker2D" parent="Player"]
