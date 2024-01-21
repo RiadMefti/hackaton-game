@@ -30,10 +30,7 @@ func _on_wave_timer_timeout(wave_size):
 	# You can also decrement wave_size here if you want to control the number of enemies per wave.
 func receive_damage():
 	var canvasLayer = get_parent().get_node("CanvasLayer")
-	var sprit1 = canvasLayer.get_node("health3")
-	var sprit2 = canvasLayer.get_node("dead3")
-	sprit1.visible = false
-	sprit2.visible = true
+
 	
 	
 	var stringHealth = "health" + str(health)
