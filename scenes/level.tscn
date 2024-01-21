@@ -1,7 +1,7 @@
 [gd_scene load_steps=50 format=3 uid="uid://0i73fqvqtfb5"]
 
 [ext_resource type="Script" path="res://scenes/movement.gd" id="1_2b6j7"]
-[ext_resource type="Texture2D" uid="uid://1cp5nv0usgi5" path="res://assets/background.png" id="1_vmmdg"]
+[ext_resource type="Texture2D" uid="uid://lth4ncwiog1r" path="res://assets/background.png" id="1_vmmdg"]
 [ext_resource type="Texture2D" uid="uid://gekrnbop4u0f" path="res://assets/idle.png" id="3_3t8nf"]
 [ext_resource type="Texture2D" uid="uid://btnwn64eqqi7i" path="res://assets/front_walk.png" id="3_heesm"]
 [ext_resource type="Texture2D" uid="uid://cjppc6d4lbpm1" path="res://assets/back_walk.png" id="3_qunku"]
@@ -3289,3 +3289,9 @@ position = Vector2(-20.32, -12.72)
 shape = SubResource("RectangleShape2D_35e57")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("17_paiqr")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]

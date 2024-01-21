@@ -2,8 +2,27 @@ extends CharacterBody2D
 
 @export var speed = 400
 var LaserScene = preload("res://scenes/laser.tscn")
+var enemy_scene = preload("res://scenes/enemy.tscn")
 var health= 3
+var wave = 0
+var current_spawned_gooses = 0
+var waves = [10,20,50,1000000000]
+func spawn_enemy():
+	var enemy_position = get_random_position_on_perimeter()
+	var enemy = enemy_scene.instantiate()
+	enemy.global_position = enemy_position
+	get_parent().get_parent().add_child(enemy)
 
+
+
+func start_wave(wave_size):
+	for i in range(wave_size):
+		spawn_enemy()
+
+func _on_wave_timer_timeout(wave_size):
+	for i in range(wave_size):
+		spawn_enemy()
+	# You can also decrement wave_size here if you want to control the number of enemies per wave.
 func receive_damage():
 	var canvasLayer = get_parent().get_node("CanvasLayer")
 	var sprit1 = canvasLayer.get_node("health3")
@@ -19,6 +38,24 @@ func receive_damage():
 	healthIcon.visible = false
 	damage.visible = true
 	health = health -1
+func get_random_position_on_perimeter():
+	var point = Vector2()
+	var side = randi() % 4  # Randomly select a side (0-3)
+
+	if side == 0:  # Top edge
+		point.x = -1000 + randi() % 2000  # Random position between -1000 and 1000
+		point.y = -500
+	elif side == 1:  # Right edge
+		point.x = 1000
+		point.y = -500 + randi() % 1000  # Random position between -500 and 500
+	elif side == 2:  # Bottom edge
+		point.x = -1000 + randi() % 2000  # Random position between -1000 and 1000
+		point.y = 500
+	elif side == 3:  # Left edge
+		point.x = -1000
+		point.y = -500 + randi() % 1000  # Random position between -500 and 500
+
+	return point
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -107,8 +144,13 @@ func _physics_process(delta):
 	updateAnim()
 	move_and_slide()
 	
+func change_wave_label(label_name):
+	var canvasLayer = get_parent().get_node("CanvasLayer")
+	var label = canvasLayer.get_node("Label")
+	label.text = label_name
 	
-	
+func _ready():
+	change_wave_label("Wave #1")
 	
 func _process(delta):
 	shoot()
@@ -117,3 +159,15 @@ func _process(delta):
 		#var laser = LaserScene.instance()
 		#laser.position = self.position  # Start the laser at the character's position
 		#get_parent().add_child(laser)  # Add the laser to the game world
+
+func newWave():
+	if(wave != 2):
+		wave+=1
+		change_wave_label("Wave #" + str(wave+1))
+	elif(wave==3):
+		change_wave_label("Infinite WAVES")
+func _on_timer_timeout():
+	if(current_spawned_gooses == waves[wave]):
+		return
+	start_wave(5)
+	current_spawned_gooses +=5
