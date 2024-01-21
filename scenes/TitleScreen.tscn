@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://0qo3h2cbyo3d"]
+[gd_scene load_steps=4 format=3 uid="uid://0qo3h2cbyo3d"]
 
 [ext_resource type="Script" path="res://scenes/TitleScreen.gd" id="1_mjdgt"]
 [ext_resource type="FontFile" uid="uid://di7g3lbon2hqf" path="res://GameMenu/joystix monospace.otf" id="2_oe8j6"]
+[ext_resource type="AudioStream" uid="uid://cokdlj5t5jlm2" path="res://assets/Y2meta.app - Run As Fast As You Can (128 kbps).mp3" id="3_joagw"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,26 +23,6 @@ theme_override_fonts/font = ExtResource("2_oe8j6")
 theme_override_font_sizes/font_size = 25
 text = "Start game"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_direction = 3
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 104.0
-offset_top = -308.0
-offset_right = -96.0
-offset_bottom = 132.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("2_oe8j6")
-theme_override_font_sizes/normal_font_size = 36
-fit_content = true
-scroll_following = true
-tab_size = 15
-context_menu_enabled = true
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = -56.0
@@ -61,5 +42,9 @@ a perilous quest to reclaim the campus.
 Will you survive the honktastic onslaught ???"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_joagw")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -118,9 +118,13 @@ func play_anim(dir, movement):
 func shoot():
 
 	if Input.is_action_just_pressed("shoot"):
+		var Gunshot = get_parent().get_node("Gunshot")
+		Gunshot.play()
+		
 		var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		if input_direction != Vector2.ZERO:
 			var laser = LaserScene.instantiate()
+			
 			laser.position = position  # Start the laser at the character's position
 			get_parent().add_child(laser)
 			
