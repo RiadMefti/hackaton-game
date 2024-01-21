@@ -74,4 +74,6 @@ func playanim(dir):
 
 
 func _on_attack_area_area_entered(area):
-	hit = true
+	if(area.name =="Area2D"):
+
+		hit = true
