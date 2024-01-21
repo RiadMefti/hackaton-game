@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://0i73fqvqtfb5"]
 
 [ext_resource type="Script" path="res://scenes/movement.gd" id="1_2b6j7"]
-[ext_resource type="Texture2D" uid="uid://1cp5nv0usgi5" path="res://assets/background.png" id="1_vmmdg"]
+[ext_resource type="Texture2D" uid="uid://lth4ncwiog1r" path="res://assets/background.png" id="1_vmmdg"]
 [ext_resource type="Texture2D" uid="uid://gekrnbop4u0f" path="res://assets/idle.png" id="3_3t8nf"]
 [ext_resource type="Texture2D" uid="uid://btnwn64eqqi7i" path="res://assets/front_walk.png" id="3_heesm"]
 [ext_resource type="Texture2D" uid="uid://cjppc6d4lbpm1" path="res://assets/back_walk.png" id="3_qunku"]
@@ -123,7 +123,7 @@ shape = SubResource("RectangleShape2D_832ag")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(6, -7)
-scale = Vector2(0.460961, 0.460961)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_eplmu")
 animation = &"front_idle"
 frame_progress = 0.446925
