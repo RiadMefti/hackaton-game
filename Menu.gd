@@ -13,3 +13,4 @@ func _on_rules_pressed():
 #Exit button 
 func _on_quit_pressed():
 	get_tree().quit()
+

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpqrr3uhuewwm"]
+[gd_scene load_steps=4 format=3 uid="uid://cpqrr3uhuewwm"]
 
 [ext_resource type="Script" path="res://GameMenu/BackButton.gd" id="1_q1ykl"]
 [ext_resource type="FontFile" uid="uid://di7g3lbon2hqf" path="res://GameMenu/joystix monospace.otf" id="2_namlp"]
+[ext_resource type="Texture2D" uid="uid://c10p67x77wvem" path="res://assets/Assets.jpeg" id="3_v3v2b"]
 
 [node name="Rules" type="Control"]
 layout_mode = 3
@@ -18,7 +19,7 @@ offset_top = 568.0
 offset_right = 168.0
 offset_bottom = 637.0
 theme_override_fonts/font = ExtResource("2_namlp")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 26
 text = "Back "
 script = ExtResource("1_q1ykl")
 
@@ -38,12 +39,17 @@ text = "1. Shoot the angry Geese
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 312.0
-offset_top = 448.0
-offset_right = 880.0
-offset_bottom = 632.0
+offset_left = 256.0
+offset_top = 384.0
+offset_right = 824.0
+offset_bottom = 568.0
 theme_override_fonts/normal_font = ExtResource("2_namlp")
 theme_override_font_sizes/normal_font_size = 22
 text = "Commands: "
+
+[node name="Assets" type="Sprite2D" parent="."]
+position = Vector2(552, 536)
+scale = Vector2(0.336806, 0.288173)
+texture = ExtResource("3_v3v2b")
 
 [connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]
