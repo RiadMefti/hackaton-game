@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsu8knd0llfrk"
+path="res://.godot/imported/Y2meta.app - Pixel Tunes (Royalty Free Game Music Pack) (128 kbps).mp3-d44669b21f608f43ce7d9a9d4982a539.mp3str"
+
+[deps]
+
+source_file="res://assets/Y2meta.app - Pixel Tunes (Royalty Free Game Music Pack) (128 kbps).mp3"
+dest_files=["res://.godot/imported/Y2meta.app - Pixel Tunes (Royalty Free Game Music Pack) (128 kbps).mp3-d44669b21f608f43ce7d9a9d4982a539.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

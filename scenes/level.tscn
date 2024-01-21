@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://0i73fqvqtfb5"]
+[gd_scene load_steps=53 format=3 uid="uid://0i73fqvqtfb5"]
 
 [ext_resource type="Script" path="res://scenes/movement.gd" id="1_2b6j7"]
 [ext_resource type="Texture2D" uid="uid://1cp5nv0usgi5" path="res://assets/background.png" id="1_vmmdg"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://b14tpyyxpb6q8" path="res://assets/SmallPuddle.png" id="16_pxjq5"]
 [ext_resource type="PackedScene" uid="uid://d0ymjt5orgv45" path="res://canvas_layer.tscn" id="17_paiqr"]
 [ext_resource type="Texture2D" uid="uid://bcwsiqg4h0tr7" path="res://assets/Environment_6.png" id="17_vjc7p"]
+[ext_resource type="AudioStream" uid="uid://nqjhwiskbvfq" path="res://scenes/Y2meta.app - ♫ FULL ALBUM - 20XX _ ROYALTY FREE CHIPTUNE MUSIC (128 kbps).mp3" id="19_72qtx"]
+[ext_resource type="AudioStream" uid="uid://bupusp7dp0rko" path="res://scenes/Y2meta.app - Laser Shot Sound Effect (128 kbps).mp3" id="20_y350d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_832ag"]
 
@@ -3325,6 +3327,16 @@ polygon = PackedVector2Array(808, -568, 792, -568, 776, -544, 768, -528, 768, -5
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_72qtx")
+volume_db = -12.381
+autoplay = true
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_y350d")
+volume_db = -11.243
+pitch_scale = 1.41
 
 [connection signal="body_entered" from="Player/DetectionArea" to="Player" method="_on_detection_area_body_entered"]
 [connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]
