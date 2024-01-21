@@ -198,3 +198,8 @@ func _on_area_2d_body_exited(body):
 func _on_timer_2_timeout():
 	speed = 400 
 	
+
+
+func _on_detection_area_body_entered(body):
+	if(body.name == "enemy"):
+		print("ouch")
