@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0ymjt5orgv45"]
+[gd_scene load_steps=4 format=3 uid="uid://d0ymjt5orgv45"]
 
 [ext_resource type="Texture2D" uid="uid://coc7ldg2umgo7" path="res://assets/health.png" id="1_6xkhh"]
 [ext_resource type="Texture2D" uid="uid://dssqe84acmg3j" path="res://assets/dead.png" id="2_xwyhg"]
+[ext_resource type="FontFile" uid="uid://di7g3lbon2hqf" path="res://GameMenu/joystix monospace.otf" id="3_vukxm"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -39,15 +40,19 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_xwyhg")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1047.0
-offset_top = 9.0
-offset_right = 1132.0
-offset_bottom = 49.0
+offset_left = 504.0
+offset_top = 16.0
+offset_right = 589.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("3_vukxm")
+theme_override_font_sizes/font_size = 20
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 578.0
-offset_top = 27.0
-offset_right = 663.0
-offset_bottom = 67.0
+offset_left = 976.0
+offset_top = 16.0
+offset_right = 1061.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("3_vukxm")
+theme_override_font_sizes/font_size = 20
 vertical_alignment = 1
