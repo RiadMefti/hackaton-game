@@ -170,3 +170,18 @@ func _on_timer_timeout():
 		return
 	start_wave(5)
 	current_spawned_gooses +=5
+
+
+func _on_area_2d_body_entered(body):
+	if body == self:
+		speed = 100
+
+
+func _on_area_2d_body_exited(body):
+	var timer = get_parent().get_node("Timer2")
+	timer.start()
+	
+
+func _on_timer_2_timeout():
+	speed = 400 
+	
