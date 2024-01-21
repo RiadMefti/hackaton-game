@@ -1,101 +1,112 @@
-[gd_scene load_steps=18 format=3 uid="uid://0i73fqvqtfb5"]
+[gd_scene load_steps=21 format=3 uid="uid://0i73fqvqtfb5"]
 
 [ext_resource type="Script" path="res://scenes/movement.gd" id="1_2b6j7"]
 [ext_resource type="Texture2D" uid="uid://1cp5nv0usgi5" path="res://assets/background.png" id="1_vmmdg"]
-[ext_resource type="Texture2D" uid="uid://d1p2yyr4o0r1s" path="res://icon.svg" id="2_q2x37"]
+[ext_resource type="Texture2D" uid="uid://gekrnbop4u0f" path="res://assets/idle.png" id="3_3t8nf"]
+[ext_resource type="Texture2D" uid="uid://btnwn64eqqi7i" path="res://assets/front_walk.png" id="3_heesm"]
+[ext_resource type="Texture2D" uid="uid://cjppc6d4lbpm1" path="res://assets/back_walk.png" id="3_qunku"]
+[ext_resource type="Texture2D" uid="uid://b74a2hpgn0ubi" path="res://assets/side_walk.png" id="4_ry0qu"]
+[ext_resource type="Texture2D" uid="uid://bei5l5pk8wuli" path="res://assets/idle_side.png" id="5_a4w8s"]
+[ext_resource type="Texture2D" uid="uid://cb5vmjx8ut3ha" path="res://assets/idle_2.png" id="5_dwn2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_832ag"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnbb5"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(0, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_grvh3"]
+atlas = ExtResource("3_qunku")
+region = Rect2(0, 0, 360, 467)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7us37"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(32, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv0x4"]
+atlas = ExtResource("3_qunku")
+region = Rect2(360, 0, 360, 467)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7c66"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(64, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yksvb"]
+atlas = ExtResource("3_3t8nf")
+region = Rect2(0, 0, 303, 541)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r8kcg"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(96, 32, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_awiom"]
+atlas = ExtResource("5_dwn2m")
+region = Rect2(0, 0, 316, 512)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wu3ss"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(96, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nukqe"]
+atlas = ExtResource("3_heesm")
+region = Rect2(0, 0, 333, 525)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t0hro"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(64, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw2qh"]
+atlas = ExtResource("3_heesm")
+region = Rect2(333, 0, 333, 525)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b1het"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(32, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_okyum"]
+atlas = ExtResource("5_a4w8s")
+region = Rect2(0, 0, 350, 521)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m2irq"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(0, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gw56"]
+atlas = ExtResource("4_ry0qu")
+region = Rect2(292, 0, 292, 533)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1u3xy"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(0, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdhjt"]
+atlas = ExtResource("4_ry0qu")
+region = Rect2(0, 0, 292, 533)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pgy2u"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(32, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ag6fu"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(64, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1bjj8"]
-atlas = ExtResource("2_q2x37")
-region = Rect2(96, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmg7f"]
+atlas = ExtResource("5_a4w8s")
+region = Rect2(0, 0, 350, 521)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eplmu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qnbb5")
+"texture": SubResource("AtlasTexture_grvh3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7us37")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s7c66")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r8kcg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wu3ss")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t0hro")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b1het")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m2irq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1u3xy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pgy2u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ag6fu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1bjj8")
+"texture": SubResource("AtlasTexture_kv0x4")
 }],
 "loop": true,
-"name": &"default",
+"name": &"back_walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yksvb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awiom")
+}],
+"loop": true,
+"name": &"front_idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nukqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw2qh")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okyum")
+}],
+"loop": true,
+"name": &"side_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gw56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdhjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmg7f")
+}],
+"loop": true,
+"name": &"side_walk",
+"speed": 6.0
 }]
 
 [node name="Game" type="Node2D"]
@@ -111,9 +122,16 @@ position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_832ag")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(6, -7)
+scale = Vector2(0.460961, 0.460961)
 sprite_frames = SubResource("SpriteFrames_eplmu")
-frame_progress = 0.27511
+animation = &"front_idle"
+frame_progress = 0.446925
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = -1179
+limit_top = -817
+limit_right = 1165
+limit_bottom = 815
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
