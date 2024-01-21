@@ -11,7 +11,9 @@ func _physics_process(delta):
 		position += (player.position - position) / speed
 		if hit:
 			print("hit")
+			player.killGoose()
 			self.queue_free()
+			
 		#update direction
 		if position.x < player.position.x and position.y < player.position.y + 75 and position.y > player.position.y - 75:
 			direction = "left"

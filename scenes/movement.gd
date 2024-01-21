@@ -5,8 +5,13 @@ var LaserScene = preload("res://scenes/laser.tscn")
 var enemy_scene = preload("res://scenes/enemy.tscn")
 var health= 3
 var wave = 0
+var currentKills = 0
 var current_spawned_gooses = 0
 var waves = [10,20,50,1000000000]
+
+func killGoose():
+	currentKills +=1
+	change_kill_label(currentKills)
 func spawn_enemy():
 	var enemy_position = get_random_position_on_perimeter()
 	var enemy = enemy_scene.instantiate()
@@ -147,11 +152,19 @@ func change_wave_label(label_name):
 	var canvasLayer = get_parent().get_node("CanvasLayer")
 	var label = canvasLayer.get_node("Label")
 	label.text = label_name
+
+func change_kill_label(label_name):
+	var canvasLayer = get_parent().get_node("CanvasLayer")
+	var label = canvasLayer.get_node("Label2")
+	label.text = "Kills: " + str(label_name)
 	
 func _ready():
 	change_wave_label("Wave #1")
+	change_kill_label(0)
 	
 func _process(delta):
+	if(currentKills == waves[wave]):
+		newWave()
 	shoot()
 	#if Input.is_action_just_pressed("shoot"):
 		#print("shoot")  # Assuming 'ui_accept' is bound to the space bar
