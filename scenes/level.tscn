@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://0i73fqvqtfb5"]
 
 [ext_resource type="Script" path="res://scenes/movement.gd" id="1_2b6j7"]
-[ext_resource type="Texture2D" uid="uid://lth4ncwiog1r" path="res://assets/background.png" id="1_vmmdg"]
+[ext_resource type="Texture2D" uid="uid://1cp5nv0usgi5" path="res://assets/background.png" id="1_vmmdg"]
 [ext_resource type="Texture2D" uid="uid://gekrnbop4u0f" path="res://assets/idle.png" id="3_3t8nf"]
 [ext_resource type="Texture2D" uid="uid://btnwn64eqqi7i" path="res://assets/front_walk.png" id="3_heesm"]
 [ext_resource type="Texture2D" uid="uid://cjppc6d4lbpm1" path="res://assets/back_walk.png" id="3_qunku"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bei5l5pk8wuli" path="res://assets/idle_side.png" id="5_a4w8s"]
 [ext_resource type="Texture2D" uid="uid://cb5vmjx8ut3ha" path="res://assets/idle_2.png" id="5_dwn2m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_832ag"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2c2vx"]
+radius = 28.0
+height = 136.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grvh3"]
 atlas = ExtResource("3_qunku")
@@ -118,8 +120,8 @@ texture = ExtResource("1_vmmdg")
 script = ExtResource("1_2b6j7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-1, 2)
-shape = SubResource("RectangleShape2D_832ag")
+position = Vector2(4, -5)
+shape = SubResource("CapsuleShape2D_2c2vx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(6, -7)
