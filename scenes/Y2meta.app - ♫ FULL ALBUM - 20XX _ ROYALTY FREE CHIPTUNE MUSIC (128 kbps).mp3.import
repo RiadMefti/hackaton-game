@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nqjhwiskbvfq"
+path="res://.godot/imported/Y2meta.app - ♫ FULL ALBUM - 20XX _ ROYALTY FREE CHIPTUNE MUSIC (128 kbps).mp3-d7e92053620f0ec77dc7c73d26a1f3a3.mp3str"
+
+[deps]
+
+source_file="res://scenes/Y2meta.app - ♫ FULL ALBUM - 20XX _ ROYALTY FREE CHIPTUNE MUSIC (128 kbps).mp3"
+dest_files=["res://.godot/imported/Y2meta.app - ♫ FULL ALBUM - 20XX _ ROYALTY FREE CHIPTUNE MUSIC (128 kbps).mp3-d7e92053620f0ec77dc7c73d26a1f3a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

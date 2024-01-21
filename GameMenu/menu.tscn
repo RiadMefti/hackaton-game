@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpkwf2ju227wr"]
+[gd_scene load_steps=5 format=3 uid="uid://dpkwf2ju227wr"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_gk0cb"]
 [ext_resource type="FontFile" uid="uid://di7g3lbon2hqf" path="res://GameMenu/joystix monospace.otf" id="2_bh4b7"]
+[ext_resource type="AudioStream" uid="uid://dsu8knd0llfrk" path="res://assets/Y2meta.app - Pixel Tunes (Royalty Free Game Music Pack) (128 kbps).mp3" id="3_dhxuy"]
+[ext_resource type="Script" path="res://GameMenu/Audio.gd" id="4_egp8g"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -41,6 +43,11 @@ offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("2_bh4b7")
 theme_override_font_sizes/font_size = 36
 text = "Play"
+
+[node name="MainMenu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dhxuy")
+autoplay = true
+script = ExtResource("4_egp8g")
 
 [connection signal="pressed" from="Rules" to="." method="_on_rules_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

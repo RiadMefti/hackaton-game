@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfgsavasovrdb"
+path="res://.godot/imported/Y2meta.app - Run As Fast As You Can (128 kbps).mp3-0f28f84c822e464894b99dff00b5ed4e.mp3str"
+
+[deps]
+
+source_file="res://Y2meta.app - Run As Fast As You Can (128 kbps).mp3"
+dest_files=["res://.godot/imported/Y2meta.app - Run As Fast As You Can (128 kbps).mp3-0f28f84c822e464894b99dff00b5ed4e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
