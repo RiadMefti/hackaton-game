@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://0qo3h2cbyo3d"]
+
+[ext_resource type="Script" path="res://scenes/TitleScreen.gd" id="1_mjdgt"]
+[ext_resource type="FontFile" uid="uid://di7g3lbon2hqf" path="res://GameMenu/joystix monospace.otf" id="2_oe8j6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mjdgt")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 544.0
+offset_right = 726.0
+offset_bottom = 624.0
+theme_override_fonts/font = ExtResource("2_oe8j6")
+theme_override_font_sizes/font_size = 25
+text = "Start game"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 104.0
+offset_top = -308.0
+offset_right = -96.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_oe8j6")
+theme_override_font_sizes/normal_font_size = 36
+fit_content = true
+scroll_following = true
+tab_size = 15
+context_menu_enabled = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -56.0
+offset_top = -128.0
+offset_right = 1223.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("2_oe8j6")
+theme_override_font_sizes/font_size = 20
+text = "Embark on an epic campus showdown as the fearless  ________ 
+
+from  UWaterloo faces her feathery foes!
+
+Armed with powerful lasers, she'll battle relentless geese in 
+
+a perilous quest to reclaim the campus.
+
+Will you survive the honktastic onslaught ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,7 +1,7 @@
 extends Control 
 #Play button
 func _on_play_pressed():
-		get_tree().change_scene_to_file("res://scenes/Level.tscn")
+		get_tree().change_scene_to_file("res://scenes/TitleScreen.tscn")
 	
 
 
@@ -13,3 +13,4 @@ func _on_rules_pressed():
 #Exit button 
 func _on_quit_pressed():
 	get_tree().quit()
+
