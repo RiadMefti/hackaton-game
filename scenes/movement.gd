@@ -40,7 +40,23 @@ func receive_damage():
 	healthIcon.visible = false
 	damage.visible = true
 	health = health -1
-	if(health == 0):
+	if health == 0:
+		# Stop timers and ongoing processes
+		var timers = get_tree().get_nodes_in_group("timers")
+		for timer in timers:
+			if timer.is_inside_tree() and timer.is_active():
+				timer.stop()
+
+		# Reset global state if any
+		# Global.reset_state()
+
+		# Free or disable nodes
+		var enemies = get_tree().get_nodes_in_group("enemies")
+		for enemy in enemies:
+			if enemy.is_inside_tree():
+				enemy.queue_free()
+
+		# Finally, change to the death scene
 		get_tree().change_scene_to_file("res://scenes/Death.tscn")
 func get_random_position_on_perimeter():
 	var point = Vector2()
