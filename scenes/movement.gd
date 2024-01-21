@@ -173,8 +173,9 @@ func _on_timer_timeout():
 
 
 func _on_area_2d_body_entered(body):
+	if body == self:
+		speed = 100
 
-	speed = 100 
 
 func _on_area_2d_body_exited(body):
 	var timer = get_parent().get_node("Timer2")
