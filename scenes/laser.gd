@@ -8,3 +8,10 @@ func _process(delta):
 	position += speed * delta
 	if position.x > get_viewport_rect().size.x:
 		queue_free()  # Delete the laser when it goes off-screen
+
+
+func _on_area_2d_area_entered(area):
+
+	if area.get_parent().name != "Player":
+	
+		self.queue_free()

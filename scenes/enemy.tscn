@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bc62polg84ufx"]
+[gd_scene load_steps=37 format=3 uid="uid://bc62polg84ufx"]
 
 [ext_resource type="Texture2D" uid="uid://cdn2jkvb3atr2" path="res://assets/back_walk1.png" id="1_0gg3g"]
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="1_udqx1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7bjb2ryfpitk" path="res://assets/front_walkG.png" id="4_8kxba"]
 [ext_resource type="Texture2D" uid="uid://bocmqiunp2vta" path="res://assets/side_walk1.png" id="5_8djd0"]
 [ext_resource type="Texture2D" uid="uid://decd1qgnmj28u" path="res://assets/d1.png" id="5_eq3xg"]
+[ext_resource type="Texture2D" uid="uid://cx1ufn2ao67tp" path="res://assets/death.png" id="5_j6ypv"]
 [ext_resource type="Texture2D" uid="uid://73knxiy1lpih" path="res://assets/d2.png" id="6_07r7c"]
 [ext_resource type="Texture2D" uid="uid://bs08epjml8w8n" path="res://assets/side_walk2.png" id="6_10rw3"]
 [ext_resource type="Texture2D" uid="uid://bq04tyj44alaq" path="res://assets/side_walk3.png" id="7_2r8em"]
@@ -27,6 +28,10 @@ region = Rect2(0, 0, 322, 338)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1iexg"]
 atlas = ExtResource("3_dgbxf")
 region = Rect2(0, 0, 302, 358)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqjmq"]
+atlas = ExtResource("5_j6ypv")
+region = Rect2(0, 0, 504, 222)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iry87"]
 atlas = ExtResource("5_eq3xg")
@@ -91,6 +96,14 @@ animations = [{
 "loop": true,
 "name": &"back_walk",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqjmq")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -163,14 +176,13 @@ radius = 132.061
 [sub_resource type="CircleShape2D" id="CircleShape2D_aiylu"]
 radius = 180.178
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_udqx1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t5lct")
-animation = &"verL_walk"
-frame_progress = 0.02129
+animation = &"death"
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -186,11 +198,17 @@ one_way_collision_margin = 46.0
 shape = SubResource("CircleShape2D_6cjpb")
 
 [node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+[node name="attack" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_aiylu")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
