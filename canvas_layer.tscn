@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0ymjt5orgv45"]
+
+[ext_resource type="Texture2D" uid="uid://coc7ldg2umgo7" path="res://assets/health.png" id="1_6xkhh"]
+[ext_resource type="Texture2D" uid="uid://dssqe84acmg3j" path="res://assets/dead.png" id="2_xwyhg"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="health1" type="Sprite2D" parent="."]
+position = Vector2(37, 40)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_6xkhh")
+
+[node name="health2" type="Sprite2D" parent="."]
+position = Vector2(94, 41)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_6xkhh")
+
+[node name="health3" type="Sprite2D" parent="."]
+position = Vector2(152, 41)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_6xkhh")
+
+[node name="dead1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(42, 34)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_xwyhg")
+
+[node name="dead2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(99, 34)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_xwyhg")
+
+[node name="dead3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(157, 34)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_xwyhg")

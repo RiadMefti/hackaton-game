@@ -5,22 +5,21 @@ var LaserScene = preload("res://scenes/laser.tscn")
 var health= 3
 
 func receive_damage():
-	#var canvasLayer = get_parent().get_node("CanvasLayer")
-	#var sprit1 = canvasLayer.get_node("health3")
-	#var sprit2 = canvasLayer.get_node("dead3")
-	#sprit1.visible = false
-	#sprit2.visible = true
+	var canvasLayer = get_parent().get_node("CanvasLayer")
+	var sprit1 = canvasLayer.get_node("health3")
+	var sprit2 = canvasLayer.get_node("dead3")
+	sprit1.visible = false
+	sprit2.visible = true
 	
 	
-	#var stringHealth = "health" + str(health)
-	#var stringDead = "dead"+ str(health)
-	
- 	#var  healthIcon = canvasLayer.get_node(stringHealth)
-	#var damage = canvasLayer.get_node(stringDead)
-	#healthIcon.visible = false
-	#damage.visible = true
-	#health = health -1
-	pass
+	var stringHealth = "health" + str(health)
+	var stringDead = "dead"+ str(health)
+	var  healthIcon = canvasLayer.get_node(stringHealth)
+	var damage = canvasLayer.get_node(stringDead)
+	healthIcon.visible = false
+	damage.visible = true
+	health = health -1
+
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
